@@ -1,4 +1,4 @@
-import { getTechnology, getLangColor, getLangImage } from "../../util/getInfoLang.js";
+import { getTechnology, getLangImage } from "../../util/getInfoLang.js";
 
 export class Graphic {
 
@@ -11,6 +11,7 @@ export class Graphic {
       const languages = this.data.map(lang => (
          {...lang, tech: getTechnology(lang.name)
       }));
+      console.info(languages)
       
          
       return /*HTML*/`

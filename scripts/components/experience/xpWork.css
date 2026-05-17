@@ -19,7 +19,7 @@
 }
 
 .xp-work ul{ 
-  padding-left: 2rem; 
+  padding-left: 1.5rem; 
   gap: var(--xp-work-space-md);
 }
 .xp-work li{

@@ -1,7 +1,7 @@
 export const dataJson = {
    hero: [
       {
-         img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3uuwuU5o8MMBkjtpwE5iSsY5VyXASXQ6El7-23OG6wA&s',
+         img: 'https://avatars.githubusercontent.com/u/177657704?v=4',
 
          name: 'David Cristiano',
 
@@ -40,7 +40,109 @@ export const dataJson = {
             'Ericsson',
             'Ngis'
          ]
-      }
+      },
+      {
+         title: 'Act Digital | Março, 2026 - Atual',
+
+         listResponsibilities: [
+            'Análise de funcionamento de redes',
+            'Testes remotos e solicitação de envio técnico',
+            'Documentação técnica para resolução de problemas.'
+         ],
+
+         listTools: [
+            'Service Now',
+            'Nokia',
+            'Huawei',
+            'Ericsson',
+            'Ngis'
+         ]
+      },
+      {
+         title: 'Act Digital | Março, 2026 - Atual',
+
+         listResponsibilities: [
+            'Análise de funcionamento de redes',
+            'Testes remotos e solicitação de envio técnico',
+            'Documentação técnica para resolução de problemas.'
+         ],
+
+         listTools: [
+            'Service Now',
+            'Nokia',
+            'Huawei',
+            'Ericsson',
+            'Ngis'
+         ]
+      },{
+         title: 'Act Digital | Março, 2026 - Atual',
+
+         listResponsibilities: [
+            'Análise de funcionamento de redes',
+            'Testes remotos e solicitação de envio técnico',
+            'Documentação técnica para resolução de problemas.'
+         ],
+
+         listTools: [
+            'Service Now',
+            'Nokia',
+            'Huawei',
+            'Ericsson',
+            'Ngis'
+         ]
+      },
+      {
+         title: 'Act Digital | Março, 2026 - Atual',
+
+         listResponsibilities: [
+            'Análise de funcionamento de redes',
+            'Testes remotos e solicitação de envio técnico',
+            'Documentação técnica para resolução de problemas.'
+         ],
+
+         listTools: [
+            'Service Now',
+            'Nokia',
+            'Huawei',
+            'Ericsson',
+            'Ngis'
+         ]
+      },
+      {
+         title: 'Act Digital | Março, 2026 - Atual',
+
+         listResponsibilities: [
+            'Análise de funcionamento de redes',
+            'Testes remotos e solicitação de envio técnico',
+            'Documentação técnica para resolução de problemas.'
+         ],
+
+         listTools: [
+            'Service Now',
+            'Nokia',
+            'Huawei',
+            'Ericsson',
+            'Ngis'
+         ]
+      },
+      {
+         title: 'Act Digital | Março, 2026 - Atual',
+
+         listResponsibilities: [
+            'Análise de funcionamento de redes',
+            'Testes remotos e solicitação de envio técnico',
+            'Documentação técnica para resolução de problemas.'
+         ],
+
+         listTools: [
+            'Service Now',
+            'Nokia',
+            'Huawei',
+            'Ericsson',
+            'Ngis'
+         ]
+      },
+      
    ],
 
    links: [
@@ -76,79 +178,11 @@ export const dataJson = {
 
    projects: [
       {
-         img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3uuwuU5o8MMBkjtpwE5iSsY5VyXASXQ6El7-23OG6wA&s',
+         img: '../images/in-development.jpeg',
 
-         title: 'Title project 1',
+         title: 'Title project one',
 
-         description: 'Descrição do projeto e as tecnologias utilizadas no projeto.',
-
-         languages: [
-            { name: "JavaScript", percent: 47 },
-            { name: "CSS", percent: 40 },
-            { name: "HTML", percent: 13 },
-         ],
-
-         framework: [
-            'Tailwind'
-         ],
-
-         links: [
-            {
-               a: '#',
-               icon: '../../../images/icon-language/github.svg',
-               name: 'Go code'
-            },
-            {
-               a: '#',
-               icon: '../../../images/icon-language/figma.svg',
-               name: 'Figma'
-            },
-            {
-               a: '#',
-               icon: '../../../images/icon-language/webpage.png',
-               name: 'Website'
-            },
-         ]
-      },{
-         img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3uuwuU5o8MMBkjtpwE5iSsY5VyXASXQ6El7-23OG6wA&s',
-
-         title: 'Title project 2',
-
-         description: 'Descrição do projeto e as tecnologias utilizadas no projeto.',
-
-         languages: [
-            { name: "Python", percent: 77 },
-            { name: "PostgreSQL", percent: 33 },
-   
-         ],
-
-         framework: [
-            'Pandas'
-         ],
-
-         links: [
-            {
-               a: '#',
-               icon: '../../../images/icon-language/github.svg',
-               name: 'Go code'
-            },
-            {
-               a: '#',
-               icon: '../../../images/icon-language/figma.svg',
-               name: 'Figma'
-            },
-            {
-               a: '#',
-               icon: '../../../images/icon-language/webpage.png',
-               name: 'Website'
-            },
-         ]
-      },{
-         img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3uuwuU5o8MMBkjtpwE5iSsY5VyXASXQ6El7-23OG6wA&s',
-
-         title: 'Title project 3',
-
-         description: 'Descrição do projeto e as tecnologias utilizadas no projeto.',
+         description: 'Este projeto será desenvolvido usando HTML, CSS e js no front, no back-end será Python junto de GitActions',
 
          languages: [
             { name: "TypeScript", percent: 55 },
@@ -157,26 +191,25 @@ export const dataJson = {
          ],
 
          framework: [
-            'Angular'
+            'Angular', 'Tailwind', 'PostgreSQL'
          ],
 
          links: [
             {
                a: '#',
-               icon: '../../../images/icon-language/github.svg',
+               icon: 'github.svg',
                name: 'Go code'
             },
             {
                a: '#',
-               icon: '../../../images/icon-language/figma.svg',
+               icon: 'figma.svg',
                name: 'Figma'
             },
             {
                a: '#',
-               icon: '../../../images/icon-language/webpage.png',
-               name: 'Website'
+               icon: 'netlify.svg',
             },
          ]
-      }
+      }, 
    ]
 };

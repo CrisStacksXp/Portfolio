@@ -27,8 +27,20 @@
 .all-xp-work {
    width: 100%;
    overflow-x: hidden;
-   padding: var(--more-info-space-md);
+   padding: var(--more-info-space-lg);
    grid-area: xp;
+   margin-bottom: var(--more-info-space-lg);
+}
+
+.all-xp-work h2 {
+   display: flex;
+   place-content: center;
+}
+
+.xp-container {
+   display: flex;
+   flex-direction: column;
+   gap: var(--more-info-space-md);
 }
 
 .all-techs {
@@ -39,14 +51,29 @@
    gap: var(--more-info-space-md);
    grid-area: tech;
 }
+
 .all-projects {
    padding: var(--more-info-radius-sm);
    width: 100%;
-   display: grid;
-   grid-template-columns: 1fr;
+   display: flex;
+   place-items: center;
+   flex-direction: column;
    gap: var(--more-info-space-md);
    grid-area: projects;
 }
+
+.all-projects-wrapper{
+   width: 100%;
+   display: flex;
+   place-items: center;
+   flex-direction: column;
+   gap: var(--more-info-space-md);
+}
+
+.all-projects-wrapper > * {
+   flex: 0 0 auto;
+}
+
 
 .social-midia {
    width: 100%;
@@ -63,17 +90,24 @@
 
       display: grid;
 
-      grid-template-columns:
-         minmax(0, 1.5fr) minmax(280px, 1fr);
+      grid-template-columns: 1fr 1fr;
 
       gap: var(--more-info-space-md);
 
       align-content: center;
 
       grid-template-areas:
-         "xp projects"
-         "tech projects"
+         "xp xp"
+         "tech tech"
+         "projects projects"
          "social social";
+   }
+
+   .xp-container,
+   .all-projects-wrapper{
+      flex-direction: row;
+      overflow-x: auto;
+      white-space: nowrap;
    }
 
    .all-techs {
@@ -87,46 +121,31 @@
 
    .sum-about-me {
       display: grid;
-      grid-template-columns: minmax(24rem, 32rem) 1fr;
+      grid-template-columns: minmax(24rem, 30rem) 1fr;
       grid-template-rows: auto;
       justify-content: space-between;
       gap: var(--more-info-space-md);
       align-items: start;
-            grid-template-areas:
-         "xp tech"
+      grid-template-areas:
+         "xp xp"
+         "tech tech"
          "projects projects"
          "social social ";
    }
-   .all-projects{
+
+   .all-projects {
       place-items: center;
    }
-   .all-projects div:not(.card) {
-      display: flex;
-      gap: 1rem;
-   }
+
 }
+
 @media (min-width: 1440px) {
 
    .sum-about-me {
-         grid-template-areas:
+      grid-template-areas:
          "xp tech "
          "projects projects"
-         "social social social";
+         "social social ";
    }
 
 }
-
-/*
-   .sum-about-me {
-      display: grid;
-      grid-template-columns: minmax(24rem, 32rem) minmax(10rem, 35rem) 20rem;
-      grid-template-rows: auto;
-      justify-content: space-between;
-      gap: var(--more-info-space-md);
-      align-items: start;
-            grid-template-areas:
-         "xp tech projects"
-         "xp tech projects"
-         "social social social";
-   }
-*/

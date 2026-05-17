@@ -12,9 +12,7 @@ export class MoreInformation {
 
    html() {
 
-      const {experiences, languages, projects ,links} = this.data;
-      console.info('------', projects)
-      
+      const {experiences, languages, projects ,links} = this.data;      
 
       this.refTag.insertAdjacentHTML("beforeend", /*HTML*/`
 
@@ -47,7 +45,7 @@ export class MoreInformation {
                   Meus projetos
                </h2>
 
-               <div>
+               <div class="all-projects-wrapper">
                   ${ projects.map((data)=>{
                      return new CardProject(data).init()
                   }).join('')}
