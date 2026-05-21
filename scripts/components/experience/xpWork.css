@@ -1,47 +1,47 @@
 :root {
   --bg-black-transparent: #0000004d;
 
-  --xp-work-space-sm: .5rem;
-  --xp-work-space-md: 1rem;
-  --xp-work-space-lg: 1.5rem;
-
-  --xp-work-radius-sm: .5rem;
-  --xp-work-radius-md: 1rem;
-  --xp-work-radius-lg: 1.5rem;
+  --measure-sm: .5rem;
+  --measure-md: 1rem;
+  --measure-lg: 1.5rem;
+  --measure-xl: 2rem;
 }
 
-.xp-work, .xp-work ul:first-child {
+.xp-work,
+.xp-work ul:first-child {
   width: 100%;
   display: flex;
   place-items: start;
   flex-direction: column;
-  gap: var(--xp-work-space-sm);
+  gap: var(--measure-sm);
 }
 
-.xp-work ul{ 
-  padding-left: 1.5rem; 
-  gap: var(--xp-work-space-md);
+.xp-work ul {
+  padding-left: 1.5rem;
+  gap: var(--measure-md);
 }
-.xp-work li{
+
+.xp-work li {
   list-style: circle;
 }
-.list-tools{
+
+.list-tools {
   display: flex;
   place-content: center;
   flex-wrap: wrap;
-  gap: var(--xp-work-space-md); 
+  gap: var(--measure-md);
 }
 
-.list-tools li{
-  padding: .1rem var(--xp-work-space-sm);
-  border-radius: var(--xp-work-radius-md);
+.list-tools li {
+  padding: .1rem var(--measure-sm);
+  border-radius: var(--measure-md);
   background-color: var(--accent-emerald);
   overflow: hidden;
   position: relative;
   z-index: 1;
 }
 
-.list-tools li::before{
+.list-tools li::before {
   position: absolute;
   content: "";
   width: 100%;

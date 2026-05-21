@@ -6,4 +6,3 @@ const { hero, ...allDatas } = dataJson;
 
 new Hero(document.body, hero).init();
 new MoreInformation(document.body, allDatas ).init();
-

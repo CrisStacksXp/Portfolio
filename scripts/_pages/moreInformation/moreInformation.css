@@ -2,34 +2,33 @@
    --more-info-text-primary: #f9f9f9;
    --border-color: #314158;
 
-   --more-info-space-sm: .5rem;
-   --more-info-space-md: 1rem;
-   --more-info-space-lg: 2rem;
-
-   --more-info-radius-sm: .5rem;
-   --more-info-radius-md: 1rem;
-   --more-info-radius-lg: 1.5rem;
+   --measure-sm: .5rem;
+   --measure-md: 1rem;
+   --measure-lg: 1.5rem;
+   --measure-xl: 2rem;
 }
 
 .sum-about-me {
-   margin: var(--more-info-space-md) auto;
+   margin: var(--measure-md) auto;
    display: flex;
    place-items: center;
    flex-direction: column;
-   gap: var(--more-info-space-md);
+   gap: var(--measure-md);
    color: var(--more-info-text-primary);
 }
 
-.sum-about-me i {
-   font-size: 2rem;
-}
+.sum-about-me i { font-size: 2rem; }
+
+/* =========================================
+   WORK EXPERIENCE
+========================================= */
 
 .all-xp-work {
    width: 100%;
    overflow-x: hidden;
-   padding: var(--more-info-space-lg);
+   padding: var(--measure-lg);
    grid-area: xp;
-   margin-bottom: var(--more-info-space-lg);
+   margin-bottom: var(--measure-lg);
 }
 
 .all-xp-work h2 {
@@ -40,25 +39,31 @@
 .xp-container {
    display: flex;
    flex-direction: column;
-   gap: var(--more-info-space-md);
+   gap: var(--measure-md);
 }
 
+.sum-about-me i { font-size: 2rem; }
+
+/* =========================================
+   TECHNOLOGY AND TOOLS
+========================================= */
+
 .all-techs {
-   padding: var(--more-info-radius-sm);
+   padding: var(--measure-sm);
    width: 100%;
    display: grid;
    grid-template-columns: 1fr;
-   gap: var(--more-info-space-md);
+   gap: var(--measure-md);
    grid-area: tech;
 }
 
 .all-projects {
-   padding: var(--more-info-radius-sm);
+   padding: var(--measure-sm);
    width: 100%;
    display: flex;
    place-items: center;
    flex-direction: column;
-   gap: var(--more-info-space-md);
+   gap: var(--measure-md);
    grid-area: projects;
 }
 
@@ -67,22 +72,30 @@
    display: flex;
    place-items: center;
    flex-direction: column;
-   gap: var(--more-info-space-md);
+   gap: var(--measure-md);
 }
 
 .all-projects-wrapper > * {
    flex: 0 0 auto;
 }
 
+/* =========================================
+   SOCIAL MIDIA
+========================================= */
+
 
 .social-midia {
    width: 100%;
-   padding: var(--more-info-space-md) 0;
+   padding: var(--measure-md) 0;
    border: solid 1px var(--border-color);
-   border-radius: var(--more-info-radius-sm);
+   border-radius: var(--measure-sm);
    height: 5rem;
    grid-area: social;
 }
+
+/* =========================================
+   MEDIA VW
+========================================= */
 
 @media (min-width: 768px) {
 
@@ -92,7 +105,7 @@
 
       grid-template-columns: 1fr 1fr;
 
-      gap: var(--more-info-space-md);
+      gap: var(--measure-md);
 
       align-content: center;
 
@@ -113,7 +126,7 @@
    .all-techs {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
-      gap: var(--more-info-space-md);
+      gap: var(--measure-md);
    }
 }
 
@@ -124,7 +137,7 @@
       grid-template-columns: minmax(24rem, 30rem) 1fr;
       grid-template-rows: auto;
       justify-content: space-between;
-      gap: var(--more-info-space-md);
+      gap: var(--measure-md);
       align-items: start;
       grid-template-areas:
          "xp xp"

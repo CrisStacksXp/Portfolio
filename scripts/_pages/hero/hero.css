@@ -2,24 +2,21 @@
   --hero-info-text-primary: #f9f9f9;
   --border-color: #314158;
 
-  --hero-info-space-sm: .5rem;
-  --hero-info-space-md: 1rem;
-  --hero-info-space-lg: 1.5rem;
-
-  --hero-info-radius-sm: .5rem;
-  --hero-info-radius-md: 1rem;
-  --hero-info-radius-lg: 1.5rem;
+  --measure-sm: .5rem;
+  --measure-md: 1rem;
+  --measure-lg: 1.5rem;
+  --measure-xl: 2rem;
 }
 
 .hero {
-  margin: 0 auto var(--hero-info-space-md);
-  padding: var(--hero-info-space-md);
+  margin: 0 auto var(--measure-md);
+  padding: var(--measure-md);
   border: 1px solid var(--border-color);
   border-radius: .75rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: var(--hero-info-space-lg);
+  gap: var(--measure-lg);
   overflow: hidden;
   position: relative;
   color: var(--hero-info-text-primary);
@@ -34,7 +31,7 @@
   border: .25rem solid var(--bg-main);
   box-shadow:
     0 0 .8rem var(--accent-emerald),
-    inset 0 0 var(--hero-info-space-lg) var(--accent-emerald);
+    inset 0 0 var(--measure-lg) var(--accent-emerald);
 }
 
 .img img {
@@ -53,7 +50,7 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: var(--hero-info-space-md);
+  gap: var(--measure-md);
 }
 
 .hero section small,
