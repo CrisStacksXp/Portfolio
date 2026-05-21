@@ -63,10 +63,7 @@ export class MoreInformation {
       `);
    }
 
-   script() {
-
-
-}
+   script() {}
 
    init() {
 

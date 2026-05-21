@@ -1,17 +1,33 @@
+:root {
+   --measure-sm: .5rem;
+   --measure-md: 1rem;
+   --measure-lg: 1.5rem;
+   --measure-xl: 2rem;
+
+   --black: #000000aa;
+   --bg-main: #20272F;
+   --accent-emerald: #00BD95;
+   
+}
+
+/* =========================================
+   ICON DESCRIPTION COMPONENT
+========================================= */
+
 .icons-description {
    display: grid;
    grid-template-columns: repeat(auto-fit, minmax(4rem, 1fr));
    grid-template-rows: 1fr;
    place-items: center;
-   gap: .5rem;
+   gap: var(--measure-sm);
    position: relative;
    width: min(100%, 25rem);
 }
 
 .icon {
-   padding: 1rem;
+   padding: var(--measure-md);
    border: solid 1px var(--border-color);
-   border-radius: .5rem;
+   border-radius: var(--measure-sm);
 
    transition:
       transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275),
@@ -24,13 +40,13 @@
 
 .icon i {
    color: var(--accent-emerald);
-   font-size: clamp(1.5rem, 5vw, 2rem);
-   ;
+   font-size: clamp(var(--measure-lg), 5vw, var(--measure-xl));
 }
 
 .icon:hover {
    border-color: var(--accent-emerald);
-   box-shadow: 0 1rem 1.5rem rgba(0, 255, 163, 0.2);
+   box-shadow: 0 var(--measure-md) var(--measure-lg) var(--black),
+   0 0 var(--measure-sm) var(--accent-emerald);
 }
 
 .icon small {
@@ -40,7 +56,7 @@
    opacity: 0;
    z-index: 1;
    border: solid var(--accent-emerald) 1px;
-   border-radius: 1rem;
+   border-radius: var(--measure-md);
    padding: .4rem .8rem;
    background: var(--bg-main);
    font-size: .8rem;
@@ -48,26 +64,29 @@
    pointer-events: none;
    transform: translate(-3rem, -2rem);
    transition: opacity .2s ease;
+   box-shadow:  0 0 var(--measure-sm) var(--accent-emerald);
 }
 
 .icon small.active {
    opacity: 1;
 }
 
-/*************/
+/* =========================================
+   ICON LINK COMPONENT
+========================================= */
 
 .icon-link {
    display: flex;
    justify-content: center;
    align-items: center;
-   gap: 1rem;
+   gap: var(--measure-md);
 }
 
 .icon-link li {
    border: solid 1px #00BD95;
    border-radius: .2rem;
    transform: skewY(-10deg);
-   padding: .5rem 1rem;
+   padding: var(--measure-sm) var(--measure-md);
    position: relative;
    overflow: hidden;
    transition: transform 0.3s ease, background-color 0.3s ease;
@@ -79,17 +98,17 @@
    background-color: var(--accent-emerald);
    position: absolute;
    left: 50%;
-   width: 1.5rem;
-   height: 1.5rem;
+   width: var(--measure-lg);
+   height: var(--measure-lg);
    top: 90%;
-   filter: blur(1rem);
+   filter: blur(var(--measure-md));
    transition: all 0.4s ease;
    opacity: 0.5;
 }
 
 .icon-link li:hover {
-   transform: skewY(-15deg) translateY(-5px);
-   box-shadow: 0 .5rem 1rem var(--bg-card);
+   transform: skewY(-15deg) translateY(-8px);
+   box-shadow: 0 var(--measure-sm) var(--measure-lg) var(--black);
 }
 
 .icon-link li:hover::before {
@@ -97,17 +116,17 @@
    width: 3rem;
    height: 3rem;
    opacity: 1;
-   filter: blur(1.5rem);
+   filter: blur(var(--measure-lg));
 }
 
 .icon-link li i {
-   font-size: 1.5rem;
+   font-size: var(--measure-lg);
    color: var(--accent-emerald);
 }
 
 @media (min-width: 768px) {
-  .icons-description{
-    justify-content: start;
-  }
+   .icons-description {
+      justify-content: start;
+   }
 
 }

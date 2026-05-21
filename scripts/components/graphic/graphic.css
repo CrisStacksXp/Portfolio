@@ -1,15 +1,16 @@
 :root {
   --graphic-text-default: #f9f9f9;
 
-  --graphic-space-sm: .5rem;
-  --graphic-space-md: 1rem;
-  --graphic-space-lg: 1.5rem;
-
-  --graphic-radius-sm: .5rem;
-  --graphic-radius-md: 1rem;
-  --graphic-radius-lg: 1.5rem;
+   --measure-sm: .5rem;
+   --measure-md: 1rem;
+   --measure-lg: 1.5rem;
+   --measure-xl: 2rem;
 
 }
+
+/* =========================================
+   BAR LANGUAGE COMPONENT - htmlLanguages()
+========================================= */
 
 .progress-bar-shell {
   width: 100%;
@@ -25,15 +26,15 @@
 
 .names-languages {
   flex-wrap: wrap;
-  gap: var(--graphic-space-sm);
-  font-size: var(--graphic-space-md);
-  margin-bottom: var(--graphic-space-sm);
+  gap: var(--measure-sm);
+  font-size: var(--measure-md);
+  margin-bottom: var(--measure-sm);
   padding-block: .5rem;
 }
 
 .names-languages small {
   padding: .2rem .4rem;
-  border-radius: var(--graphic-radius-md);
+  border-radius: var(--measure-md);
 
   transition:
     transform .3s ease,
@@ -44,8 +45,8 @@
 .stack-bar {
   display: flex;
   width: 100%;
-  height: var(--graphic-space-sm);
-  border-radius: var(--graphic-radius-lg);
+  height: var(--measure-sm);
+  border-radius: var(--measure-lg);
   opacity: .7;
   overflow: hidden;
 }
@@ -59,23 +60,18 @@
 }
 
 .lang-item {
-
-  padding: .2rem var(--graphic-space-sm);
-
-  border-radius: var(--graphic-radius-md);
-
+  padding: .2rem var(--measure-sm);
+  border-radius: var(--measure-md);
   background:
     linear-gradient(135deg,
-
       rgb(var(--theme-rgb) / .85),
-
       rgb(var(--theme-rgb) / .45));
 
   border:
     1px solid rgb(var(--theme-rgb) / .4);
 
   box-shadow:
-    0 0 .6rem rgb(var(--theme-rgb) / .18);
+    0 0 var(--measure-sm) rgb(var(--theme-rgb) / .18);
 
   transition:
     transform .3s ease,
@@ -84,19 +80,15 @@
 }
 
 .lang-item:hover {
-
   transform:
     translateY(-2px);
-
   filter:
     brightness(1.1);
-
   box-shadow:
-    0 0 var(--graphic-space-sm) rgb(var(--theme-rgb) / .45);
+    0 0 var(--measure-sm) rgb(var(--theme-rgb) / .45);
 }
 
 .bar-item {
-
   position: relative;
   transition:
     transform .3s ease,
@@ -112,109 +104,75 @@
       rgb(var(--theme-rgb)));
 
   box-shadow:
-    0 0 var(--graphic-space-sm) rgb(var(--theme-rgb) / .25);
+    0 0 var(--measure-sm) rgb(var(--theme-rgb) / .25);
 }
 
 .bar-item:hover {
-
   filter:
     brightness(1.2);
-
   transform:
     scaleY(1.2);
-
   box-shadow:
-    0 0 var(--graphic-space-md) rgb(var(--theme-rgb) / .7);
+    0 0 var(--measure-md) rgb(var(--theme-rgb) / .7);
 }
 
-/*************/
+/* =========================================
+   BAR LANGUAGE COMPONENT -  htmlBar
+========================================= */
 
 .bar-language {
-
   width: 100%;
-
-
-
-  padding: var(--graphic-space-md);
-
-  border-radius: var(--graphic-radius-md);
-
+  padding: var(--measure-md);
+  border-radius: var(--measure-md);
   display: flex;
-
   flex-direction: column;
-
   justify-content: center;
-
-  gap: var(--graphic-space-md);
-
-  backdrop-filter: blur(var(--graphic-space-md));
-
+  gap: var(--measure-md);
+  backdrop-filter: blur(var(--measure-md));
   transition:
     transform .4s ease,
     box-shadow .4s ease;
 }
 
 .bar-language:hover {
-
-  transform:
-    translateY(-4px);
+  transform: translateY(-4px);
 }
 
 .bar-language-header {
-
   display: flex;
-
   align-items: center;
-
   gap: .8rem;
 }
 
 .bar-language-header {
-
   display: flex;
-
   align-items: center;
-
   gap: .8rem;
 }
 
 .bar-language-header img {
-
   width: 2.5rem;
-
   height: 2.5rem;
-
   object-fit: contain;
 }
 
 .bar-language small {
-
-  font-size: var(--graphic-space-md);
+  font-size: var(--measure-md);
 }
 
 .bar-percentage {
-
   position: relative;
-
-  height: var(--graphic-space-md);
-
+  height: var(--measure-md);
   overflow: hidden;
-
   border-radius: 999px;
 }
 
 .bar-percentage::before {
-
   content: '';
-
   position: absolute;
-
   inset: 0;
-
   z-index: 10;
-
   pointer-events: none;
-
   background:
     repeating-linear-gradient(90deg,
 
@@ -227,31 +185,20 @@
 }
 
 .bar-fill {
-
   position: relative;
-
   display: block;
-
   width: 100%;
-
   height: 100%;
-
   border-radius: inherit;
-
   transform-origin: left;
-
   animation:
     growBar 1.2s cubic-bezier(.77, 0, .18, 1) forwards;
 }
 
 .bar-fill::after {
-
   content: '';
-
   position: absolute;
-
   inset: 0;
-
   background:
     linear-gradient(90deg,
 
@@ -260,36 +207,27 @@
       rgb(255 255 255 / .25),
 
       transparent);
-
   animation:
     shine 3s linear infinite;
 }
 
 @keyframes growBar {
-
   from {
-
     transform:
       scaleX(0);
   }
-
   to {
-
     transform:
       scaleX(var(--percent));
   }
 }
 
 @keyframes shine {
-
   from {
-
     transform:
       translateX(-100%);
   }
-
   to {
-
     transform:
       translateX(200%);
   }
@@ -297,70 +235,54 @@
 
 
 .bar-language {
-
   background:
     linear-gradient(180deg,
-
       rgb(var(--theme-rgb) / .10),
-
       rgb(var(--theme-rgb) / .03));
 
   border:
     1px solid rgb(var(--theme-rgb) / .30);
-
   box-shadow:
-    0 0 var(--graphic-space-md) rgb(var(--theme-rgb) / .20);
-
+    0 0 var(--measure-md) rgb(var(--theme-rgb) / .20);
   color:
     rgb(var(--theme-rgb));
 }
 
 .bar-language {
-
   background:
     linear-gradient(180deg,
-
       rgb(var(--theme-rgb) / .10),
 
       rgb(var(--theme-rgb) / .03));
-
   border:
     1px solid rgb(var(--theme-rgb) / .30);
-
   box-shadow:
-    0 0 var(--graphic-space-md) rgb(var(--theme-rgb) / .20);
-
+    0 0 var(--measure-md) rgb(var(--theme-rgb) / .20);
   color:
     rgb(var(--theme-rgb));
 }
 
 .bar-language-header img {
-
   filter:
-    drop-shadow(0 0 var(--graphic-space-sm) rgb(var(--theme-rgb) / .60));
+    drop-shadow(0 0 var(--measure-sm) rgb(var(--theme-rgb) / .60));
 }
 
 .bar-language-header img {
-
   filter:
-    drop-shadow(0 0 var(--graphic-space-sm) rgb(var(--theme-rgb) / .60));
+    drop-shadow(0 0 var(--measure-sm) rgb(var(--theme-rgb) / .60));
 }
 
 .bar-fill {
-
   background:
     linear-gradient(90deg,
-
       rgb(var(--theme-rgb) / .40),
-
       rgb(var(--theme-rgb)));
 
   filter:
-    drop-shadow(0 0 var(--graphic-space-sm) rgb(var(--theme-rgb) / .60));
+    drop-shadow(0 0 var(--measure-sm) rgb(var(--theme-rgb) / .60));
 }
 
 .bar-language small {
-
   color:
     rgb(var(--theme-rgb));
 }

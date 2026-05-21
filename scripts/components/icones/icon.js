@@ -57,19 +57,7 @@ export class Icon {
 
       });
    }
-
-   init() {
-
-      const html = this.htmlDescription();
-
-      // espera renderizar no DOM
-      requestAnimationFrame(() => {
-         this.script();
-      });
-
-      return html;
-   }
-
+   
    initIconLink(){
       return `
 
@@ -87,4 +75,17 @@ export class Icon {
          </ul>
       `
    }
+
+   init() {
+
+      const html = this.htmlDescription();
+
+      // espera renderizar no DOM
+      requestAnimationFrame(() => {
+         this.script();
+      });
+
+      return html;
+   }
+
 }
