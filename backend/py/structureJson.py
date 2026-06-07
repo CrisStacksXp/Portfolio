@@ -1,0 +1,96 @@
+class StructureJson:
+
+    def __init__(self, github_data):
+        self.github_data = github_data if github_data else {}
+        print("EstruturaJson inicializada com dados do GitHub:", github_data )  # Debug: Verificar os dados recebidos
+
+    def build_json(self):
+        portfolio = {
+            "hero": {
+                "img": self.github_data.get("avatar_url"),
+                "name": self.github_data.get("name"),
+                "bio": self.github_data.get("bio"),
+                "softSkills": [
+                    {"icon": 'ph-light ph-ear', "title": 'Escuta ativa'},
+                    {"icon": 'ph-light ph-user-sound', "title": 'Comunicação'},
+                    {"icon": 'ph-light ph-brain', "title": 'Raciocínio lógico'},
+                    {"icon": 'ph-light ph-chart-line-up', "title": 'Melhoria continua'},
+                    {"icon": 'ph-light ph-handshake', "title": 'Colaboração'}
+                ],
+            "description": "Desenvolvedor focado em criação de site para criação de interfaces performáticas e acessíveis. Como analista de redes, utilizo raciocínio lógico para diagnosticar falhas técnicas e otimizar processos, aplicando agora essa capacidade analítica e boas práticas de código para entregar soluções de software escaláveis."
+            },
+            "experiences": [
+                {
+                    "title": "Act Digital | Março, 2026 - Atual",
+                    "listResponsibilities": [
+                        "Análise de funcionamento de redes",
+                        "Testes remotos e solicitação de envio técnico",
+                        "Documentação técnica para resolução de problemas."
+                    ],
+                    "listTools": ["Service Now", "Nokia", "Huawei", "Ericsson", "Ngis"]
+                }
+            ],
+            "techs": {
+                "languages": [
+                    { "name": "TypeScript", "percent": 65 },
+                    { "name": "JavaScript", "percent": 75 },
+                    { "name": "HTML", "percent": 73 },
+                    { "name": "Python", "percent": 36 },
+                    { "name": "CSS", "percent": 73 },
+                    { "name": "Angular", "percent": 38 },
+                    { "name": "Tailwind", "percent": 47 },
+                    { "name": "MySQL", "percent": 45 },
+                    { "name": "PostgreSQL", "percent": 32 },
+                ],
+                "tools": [
+                    {"name": "MongoDB", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg"},
+                    {"name": "Linux", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg"},
+                    {"name": "Figma", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg"},
+                    {"name": "Git", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"},
+                    {"name": "Vscode", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg"},
+                ]
+            },
+            "projects": [
+                {
+                    "img": "https://private-user-images.githubusercontent.com/177657704/531913619-e18e0af7-c98f-4bc2-9613-b9987d268064.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3ODA4NzMzNzMsIm5iZiI6MTc4MDg3MzA3MywicGF0aCI6Ii8xNzc2NTc3MDQvNTMxOTEzNjE5LWUxOGUwYWY3LWM5OGYtNGJjMi05NjEzLWI5OTg3ZDI2ODA2NC5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjYwNjA3JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI2MDYwN1QyMjU3NTNaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT05ODU5ZTAxYTkzN2RmMjUzMjI1YWY0YjZkZDdiNTFkZjQyNzMxM2YyODJkNGZiM2RhNDlmMmVjZDhiMTVlMTUyJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZyZXNwb25zZS1jb250ZW50LXR5cGU9aW1hZ2UlMkZwbmcifQ.dO7jbVFhpf52anjDiO0ywj-6-pt_F3w9vqUksglbowo",
+                    "title": "Rick And Morty API",
+                    "description": "Projeto desenvolvido usando API rest.",
+                    "languages": [
+                        { "name": "TypeScript", "percent": 56.6 },
+                        { "name": "CSS", "percent": 38 },
+                        { "name": "HTML", "percent": 5.4 },
+                    ],
+                    "framework": [],
+                    "links": [
+                        {"a": "https://github.com/CrisStacksXp/Rick_And_Morty_API", "icon": "github.svg", "name": "Go code"},
+                        {"a": "#", "icon": "figma.svg", "name": "Figma"},
+                        {"a": "https://rickandmortyapiinfinitescroll.netlify.app/", "icon": "netlify.svg"}
+                    ]
+                },{
+                    "img": "../images/in-development.jpeg",
+                    "title": "To-do-list",
+                    "description": "Lista de tarefas com CRUD e login usando banco de dados PostgreSQL.",
+                    "languages": [
+                        { "name": "Python", "percent": 55.8 },
+                        { "name": "CSS", "percent": 23.9 },
+                        { "name": "HTML", "percent": 20.1 },
+                        { "name": "JavaScript", "percent": 0.2 },
+                    ],
+                    "framework": ["Django"],
+                    "links": [
+                        {"a": "#", "icon": "github.svg", "name": "Go code"},
+                        {"a": "#", "icon": "figma.svg", "name": "Figma"},
+                        {"a": "#", "icon": "netlify.svg"}
+                    ]
+                },
+            ],
+            
+            
+            "links": [
+                {"link": "https://www.linkedin.com/in/david-cristiano", "icon": "ph-light ph-linkedin-logo"},
+                {"link": "https://github.com/CrisStacksXp", "icon": "ph-light ph-github-logo"},
+                {"link": "mailto:cristianodd3097@gmail.com", "icon": "ph-light ph-paper-plane-tilt"},
+                {"link": "https://www.figma.com/", "icon": "ph-light ph-figma-logo"}
+            ]
+        }
+        return portfolio
