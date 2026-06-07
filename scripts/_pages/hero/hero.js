@@ -9,7 +9,7 @@ export class Hero {
 
    html() {
 
-      const {img, name, bio, description, softSkills} = this.data[0];
+      const {img, name, bio, description, softSkills} = this.data;
 
       this.refTag.insertAdjacentHTML("beforeend", /*HTML*/`
 

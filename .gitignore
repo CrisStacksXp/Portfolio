@@ -1,1 +1,19 @@
-update_info.py
+# Ambiente virtual
+venv/
+.venv/
+env/
+
+# Variáveis de ambiente
+.env
+
+# Cache Python
+__pycache__/
+*.pyc
+*.pyo
+
+# VSCode
+.vscode/
+
+__pycache__/
+*.pyc
+*.pyo

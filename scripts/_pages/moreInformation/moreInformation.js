@@ -12,7 +12,15 @@ export class MoreInformation {
 
    html() {
 
-      const {experiences, languages, projects ,links} = this.data;      
+      const experiences = this.data.experiences ?? [];
+      const projects = this.data.projects ?? [];
+      const links = this.data.links ?? [];
+      const techs = this.data.techs ?? {
+         languages: [],
+         tools: []
+      };
+
+      console.info('projects', projects);
 
       this.refTag.insertAdjacentHTML("beforeend", /*HTML*/`
 
@@ -33,7 +41,7 @@ export class MoreInformation {
             </section>
 
             <section class="all-techs" >
-               ${languages.map((el) => {
+               ${techs.languages.map((el) => {
                   return new Graphic(el).htmlBar();
                }).join('')}
             </section>
@@ -46,7 +54,7 @@ export class MoreInformation {
                </h2>
 
                <div class="all-projects-wrapper">
-                  ${ projects.map((data)=>{
+                  ${projects.map((data)=>{
                      return new CardProject(data).init()
                   }).join('')}
                </div>
