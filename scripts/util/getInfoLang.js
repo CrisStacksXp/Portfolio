@@ -96,6 +96,12 @@ export const technologies = [
       rgb: "255 62 0",
       image: "svelte.svg"
    },
+   {
+      name: "Django",
+      color: "#2a5f4c",
+      rgb: "42 95 76",
+      image: "django.svg"
+   },
 
    // 🎨 UI / Styling
 

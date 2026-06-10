@@ -1,27 +1,45 @@
 import { Hero } from "./scripts/_pages/hero/hero.js";
 import { MoreInformation } from "./scripts/_pages/moreInformation/moreInformation.js";
 
-// Função assíncrona para carregar os dados e inicializar o app
 async function initApp() {
     try {
-        // 1. Faz a requisição para o arquivo JSON gerado pelo Python
-        // Certifique-se de que o portfolio.json esteja na raiz do seu servidor local
         const response = await fetch('./scripts/util/portfolio.json');
-        
-        // 2. Transforma a resposta em um objeto JavaScript
-        const dataJson = await response.json();
+                const dataJson = await response.json();
 
-        const { hero, ...allDatas } = dataJson; // Desestruturação para obter os dados
+        const { hero, ...allDatas } = dataJson;
 
-        console.info("Dados JSON carregados com sucesso:", allDatas); // Debug: Verificar os dados carregados
+        console.info("Dados JSON carregados com sucesso:", allDatas);
         new Hero(document.body, hero).init();
-        new MoreInformation(document.body, allDatas).init();
+        new MoreInformation(document.body, allDatas, 'animate-scroll-in').init();
+
+        ativarAnimacoesScroll();
 
     } catch (error) {
         console.error("Falha ao inicializar o portfólio:", error);
-        // Opcional: injetar uma mensagem de erro amigável na tela para o usuário
     }
 }
 
-// Executa a inicialização
+function ativarAnimacoesScroll() {
+    gsap.registerPlugin(ScrollTrigger);
+
+    document.querySelectorAll('.animate-scroll-in').forEach((elemento) => {
+        gsap.timeline({
+            scrollTrigger: {
+                trigger: elemento,
+                start: "top 90%",
+                end: "bottom 10%",
+                scrub: 1,
+            }
+        })
+        .fromTo(elemento, 
+            { opacity: 0, scale: 0.95, y: 8 }, 
+            { opacity: 1, scale: 1, y: 0, duration: 2 }
+        )
+        .to(elemento, 
+            { opacity: 0, scale: 0.95, y: -8, duration: 2 }, 
+            "+=2"
+        );
+    });
+}
+
 initApp();

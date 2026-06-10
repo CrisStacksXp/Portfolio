@@ -4,6 +4,7 @@ export class Carousel {
 
    constructor(data = []) {
       this.data = data;
+      this.carouselId = `carousel-${Math.random().toString(36).substr(2, 9)}`;
    }
 
    html() {
@@ -15,11 +16,10 @@ export class Carousel {
       }));
 
       return /*html*/`
-
          <section class="simple-carousel">
-            <div class="container-carousel" id="simple-slider">
+            <div class="container-carousel" id="${this.carouselId}">
                ${techsFormatted.map((el) => {
-                  return `
+         return `
                          <img
                            src="${basePath + el.techs?.image}"
                               alt="Icon ${el.techs?.name}"
@@ -36,46 +36,50 @@ export class Carousel {
 
    script() {
 
-   const slider = document.getElementById('simple-slider');
+      const slider = document.getElementById(this.carouselId);
 
-   const icons = [...slider.querySelectorAll('img')];
+      if (!slider) return;
 
-   let index = 0;
+      const icons = [...slider.querySelectorAll('img')];
 
-   const updateSlider = () => {
+      if (icons.length === 0) return;
 
-      icons.forEach((icon) => {
+      let index = 0;
 
-         icon.classList.remove('active', 'prev');
-      });
+      const updateSlider = () => {
+         icons.forEach((icon) => {
+            icon.classList.remove('active', 'prev');
+         });
 
-      const current = icons[index];
+         const current = icons[index];
 
-      current.classList.add('active');
+         if (current) {
+            current.classList.add('active');
+         }
 
-      slider.style.transform = `
+         slider.style.transform = `
          translateX(${-index * 2.5}rem)
       `;
 
-      index++;
+         index++;
 
-      if (index >= icons.length) {
+         if (index >= icons.length) {
 
-         index = 0;
-      }
-   };
+            index = 0;
+         }
+      };
 
-   updateSlider();
+      updateSlider();
 
-   setInterval(updateSlider, 1800);
-}
+      this.intervalId = setInterval(updateSlider, 1800);
+   }
 
    init() {
       const html = this.html();
 
-      requestAnimationFrame(() => {
+      setTimeout(() => {
          this.script();
-      });
+      }, 50);
 
       return html;
    }

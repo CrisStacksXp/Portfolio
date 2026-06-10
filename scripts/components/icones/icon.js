@@ -1,7 +1,8 @@
 export class Icon {
 
-   constructor(data = []) {
+   constructor(data = [], secondaryClass = '') {
       this.data = data;
+      this.secondaryClass = secondaryClass;
    }
 
    htmlDescription() {
@@ -12,7 +13,7 @@ export class Icon {
             ${this.data.map((eachInfo) => {
 
                return `
-                  <li class="icon">
+                  <li class="icon ${this.secondaryClass}">
 
                      <i class="${eachInfo.icon}"></i>
 
@@ -80,7 +81,6 @@ export class Icon {
 
       const html = this.htmlDescription();
 
-      // espera renderizar no DOM
       requestAnimationFrame(() => {
          this.script();
       });

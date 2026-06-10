@@ -2,9 +2,10 @@ import { Icon } from "../../components/icones/icon.js";
 
 export class Hero {
 
-   constructor(refTag, data = []) {
+   constructor(refTag, data = [], secondaryClass = '') {
       this.refTag = refTag;
       this.data = data;
+      this.secondaryClass = secondaryClass;
    }
 
    html() {
@@ -30,7 +31,6 @@ export class Hero {
 
                <h2>${bio}</h2>
             </div>
-
 
                <p>${description}</p>
 
