@@ -79,7 +79,7 @@ body {
   width: 100%;
   min-width: 22rem;
   min-height: 100dvh;
-  padding: 1.5rem .5rem;
+  padding: 2rem .5rem;
   position: relative;
 }
 
@@ -138,3 +138,15 @@ i{ color: var(--accent-emerald); }
   right: .5rem;
   z-index: 5;
 }
+
+.animate-scroll-in { opacity: 0; }
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+

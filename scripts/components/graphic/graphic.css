@@ -132,6 +132,7 @@
   transition:
     transform .4s ease,
     box-shadow .4s ease;
+  will-change: transform, opacity; 
 }
 
 .bar-language:hover {

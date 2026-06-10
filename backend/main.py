@@ -17,11 +17,14 @@ HEADERS = { "Authorization": f"Bearer {TOKEN}" } if TOKEN else {}
 github = GetDataAPI(URL_GITHUB, headers=HEADERS)
 data = github.get_data()
 
+# Monta o JSON do portfólio
 portfolio = StructureJson(data)
 portfolio_json = portfolio.build_json()
 
+# Exibe organizado no terminal
 pprint.pprint(portfolio_json)
 
+# Salva arquivo JSON localmente
 with open("../scripts/util/portfolio.json", "w", encoding = "utf-8") as file:
     json.dump(portfolio_json, file, indent = 4, ensure_ascii = False)
 

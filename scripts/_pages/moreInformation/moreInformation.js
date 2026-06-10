@@ -5,9 +5,10 @@ import { Graphic } from "../../components/graphic/graphic.js";
 
 export class MoreInformation {
 
-   constructor(refTag, data = []) {
+   constructor(refTag, data = [], secondaryClass = '') {
       this.refTag = refTag;
       this.data = data;
+      this.secondaryClass = secondaryClass;
    }
 
    html() {
@@ -20,20 +21,18 @@ export class MoreInformation {
          tools: []
       };
 
-      console.info('projects', projects);
-
       this.refTag.insertAdjacentHTML("beforeend", /*HTML*/`
 
          <section class="sum-about-me limit-width">
 
             <section class="all-xp-work" >
 
-               <h2>
+               <h2 class="animate-scroll-in">
                   <i class="ph-light ph-briefcase"></i>
                   Experiência profissional
                </h2>
 
-               <div class="xp-container" >
+               <div class="xp-container animate-scroll-in" >
                   ${new XpWork(experiences).init()}
                   
                </div>
@@ -42,20 +41,20 @@ export class MoreInformation {
 
             <section class="all-techs" >
                ${techs.languages.map((el) => {
-                  return new Graphic(el).htmlBar();
+                  return new Graphic(el, this.secondaryClass).htmlBar();
                }).join('')}
             </section>
 
             <section class="all-projects">
 
-               <h2>
+               <h2 class="animate-scroll-in">
                   <i class="ph-light ph-puzzle-piece"></i>
                   Meus projetos
                </h2>
 
                <div class="all-projects-wrapper">
                   ${projects.map((data)=>{
-                     return new CardProject(data).init()
+                     return new CardProject(data, this.secondaryClass).init()
                   }).join('')}
                </div>
                

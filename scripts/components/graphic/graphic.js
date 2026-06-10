@@ -2,20 +2,21 @@ import { getTechnology, getLangImage } from "../../util/getInfoLang.js";
 
 export class Graphic {
 
-   constructor(data = []) {
+   constructor(data = [], secondaryClass = '') {
       this.data = data;
+      this.secondaryClass = secondaryClass;
    }
 
    htmlLanguages() {
 
       const languages = this.data.map(lang => (
-         {...lang, tech: getTechnology(lang.name)
-      }));
-      console.info(languages)
-      
-         
+         {
+            ...lang, tech: getTechnology(lang.name)
+         }));
+
+
       return /*HTML*/`
-         <section class="languages-container" >
+         <section class="languages-container ${this.secondaryClass}" >
 
             <div class="progress-bar-shell">
 
@@ -67,13 +68,13 @@ export class Graphic {
 
    htmlBar() {
 
-   const path = "../../../images/icon-language/";
-   const tech = getTechnology(this.data.name);
+      const path = "../../../images/icon-language/";
+      const tech = getTechnology(this.data.name);
 
-   return /*HTML*/`
+      return /*HTML*/`
 
       <div 
-         class="bar-language"
+         class="bar-language ${this.secondaryClass}"
 
          style="
             --theme-color: ${tech.color};
@@ -107,7 +108,7 @@ export class Graphic {
 
       </div>
    `;
-}
+   }
 
    initLanguagesBar() {
       return this.htmlLanguages();

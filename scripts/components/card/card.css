@@ -5,18 +5,14 @@
   --card-space-sm: .5rem;
   --card-space-md: 1rem;
   --card-space-lg: 1.5rem;
-
-  --card-radius-sm: .5rem;
-  --card-radius-md: 1rem;
-  --card-radius-lg: 1.5rem;
 }
 
 .card {
   width: min(100%, 17.5rem);
-  height: 25rem;
+  height: 30rem;
   background: var(--card-bg-main);
-  border-radius: var(--card-radius-sm);
-  color: var(--card-textprimary);
+  border-radius: var(--card-space-sm);
+  color: var(--card-text-primary);
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
@@ -123,45 +119,65 @@
 
 .links {
   display: grid;
-  grid-template-columns: repeat(2, 1fr) auto;
+  grid-template-columns: repeat(2, minmax(6rem, 1fr)) max-content;
+  align-items: center;
   gap: var(--card-space-sm);
   font-size: .90rem;
+  overflow: auto;
+  padding: var(--card-space-sm) 4px;
 }
 
 .links a {
-  border: solid 1px;
   border-radius: .2rem;
-  padding: .3rem;
+  padding: .6rem;
   position: relative;
   display: flex;
   place-items: center;
   gap: var(--card-space-sm);
+  transition: transform .4s cubic-bezier(0.25, 1, 0.5, 1), 
+              color .5s ease, 
+              border-color .5s ease, 
+              box-shadow .5s ease;
   transition: .5s ease;
-  opacity: .7;
+  white-space: nowrap; 
+  flex-shrink: 0;
 }
 
-.links a:first-child {
-  border-color: #0e131a;
+.links a small{
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.repository-link {
+  border: solid 2px #0e131a;
   box-shadow: 0 0 var(--card-space-sm) #0e131a, inset 0 0 var(--card-space-lg) #0e131a;
+
 }
 
-.links a:nth-child(2) {
-  animation: border-animation 15s infinite linear;
+.links .figma-link {
+  border: solid 2px;;
+  animation: border-animation 15s infinite linear; 
 }
 
-.links a:last-child {
-  border-color: #0da4a6;
+.figma-link small {
+  color: inherit;
+}
+
+.website-link {
+  border: solid 2px #0da4a6;
   box-shadow: 0 0 var(--card-space-sm) #0da4a6, inset 0 0 var(--card-space-sm) #0da4a6;
+}
+.website-link  small {
+  display: none;
 }
 
 .links a:hover {
   transform: translateY(-2px);
-  transition: .5s ease;
-  opacity: 1;
 }
 
 .links a img {
   width: 1rem;
+  flex-shrink: 0;
 }
 
 /* =========================================
