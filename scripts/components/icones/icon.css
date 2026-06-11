@@ -1,15 +1,3 @@
-:root {
-   --measure-sm: .5rem;
-   --measure-md: 1rem;
-   --measure-lg: 1.5rem;
-   --measure-xl: 2rem;
-
-   --black: #000000aa;
-   --bg-main: #20272F;
-   --accent-emerald: #00BD95;
-   
-}
-
 /* =========================================
    ICON DESCRIPTION COMPONENT
 ========================================= */
@@ -46,7 +34,7 @@
 .icon:hover {
    border-color: var(--accent-emerald);
    box-shadow: 0 var(--measure-md) var(--measure-lg) var(--black),
-   0 0 var(--measure-sm) var(--accent-emerald);
+               0 0 var(--measure-sm) var(--accent-emerald);
 }
 
 .icon small {
@@ -57,18 +45,19 @@
    z-index: 1;
    border: solid var(--accent-emerald) 1px;
    border-radius: var(--measure-md);
-   padding: .4rem .8rem;
+   padding: calc(var(--measure-sm) * 0.8) calc(var(--measure-sm) * 1.6);
    background: var(--bg-main);
    font-size: .8rem;
    white-space: nowrap;
    pointer-events: none;
-   transform: translate(-3rem, -2rem);
-   transition: opacity .2s ease;
+   transform: translate(-50%, -70%);
+   transition: opacity .2s ease, transform .2s ease;
    box-shadow:  0 0 var(--measure-sm) var(--accent-emerald);
 }
 
 .icon small.active {
    opacity: 1;
+   transform: translate(-50%, -100%);
 }
 
 /* =========================================
@@ -83,7 +72,7 @@
 }
 
 .icon-link li {
-   border: solid 1px #00BD95;
+   border: solid 1px var(--accent-emerald);
    border-radius: .2rem;
    transform: skewY(-10deg);
    padding: var(--measure-sm) var(--measure-md);
@@ -101,6 +90,7 @@
    width: var(--measure-lg);
    height: var(--measure-lg);
    top: 90%;
+   transform: translateX(-50%);
    filter: blur(var(--measure-md));
    transition: all 0.4s ease;
    opacity: 0.5;
@@ -113,7 +103,7 @@
 
 .icon-link li:hover::before {
    top: 40%;
-   width: 3rem;
+   width: calc(var(--measure-xl) * 1.5);
    height: 3rem;
    opacity: 1;
    filter: blur(var(--measure-lg));

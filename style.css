@@ -14,6 +14,37 @@
 /*p*/
 @import url('https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap');
 
+:root {
+
+  /* Colors */
+  --bg-main: #20272F;
+  --text-primary: #f9f9f9;
+  --accent-emerald: #00BD95;
+  --accent-ruby: #e94747;
+  --border-color: #314158;
+  --bg-black-transparent: #0000004d;
+
+  /* Fonts */
+  --font-title: "Share Tech", sans-serif;
+  --font-text: "Sora", sans-serif;
+  --font-detail: "Roboto", sans-serif;
+
+  /* Measurements */
+
+  --measure-sm: .5rem;
+  --measure-md: 1rem;
+  --measure-lg: 1.5rem;
+  --measure-xl: 2rem;
+
+  /* Typography Scale */
+  --fs-xs: clamp(.75rem, .7rem + .2vw, .85rem);
+  --fs-sm: clamp(.875rem, .8rem + .3vw, 1rem);
+  --fs-md: clamp(1rem, .9rem + .5vw, 1.15rem);
+  --fs-lg: clamp(1.25rem, 1rem + .8vw, 1.8rem);
+  --fs-xl: clamp(1.75rem, 1.3rem + 1.5vw, 3rem);
+  --fs-xxl: clamp(2.5rem, 2rem + 2vw, 4rem);
+
+}
 
 .share-tech-regular {
   font-family: "Share Tech", sans-serif;
@@ -34,16 +65,7 @@
   font-style: normal;
 }
 
-:root {
-  --bg-main: #20272F;
-  --text-primary: #f9f9f9;
-  --font-default: "Inter", sans-serif;
-  --accent-emerald: #00BD95;
-  --accent-ruby: #e94747;
-  --border-color: #314158;
 
-  --color-language-ts: #3178C6;
-}
 
 
 * {
@@ -54,9 +76,6 @@
   text-decoration: none;
   border: none;
   outline: none;
-  font-family: var(--font-default);
-  color: var(--text-primary);
-  font-family: "Montserrat", sans-serif;
 }
 
 *::-webkit-scrollbar {
@@ -76,6 +95,9 @@ li{
 
 body {
   background: var(--bg-main);
+  font-family: var(--font-text);
+  color: var(--text-primary);
+  line-height: 1.6;
   width: 100%;
   min-width: 22rem;
   min-height: 100dvh;
@@ -104,23 +126,56 @@ body::after{
   left: 0;
 } 
 
-h1, h2, h3{
+h1 { font-size: var(--fs-xl); font-weight: 700;}
+
+h2 {
+  font-size: var(--fs-lg);
+  font-weight: 600;
+}
+
+h3 {
+  font-size: var(--fs-md);
+  font-weight: 500;
+}
+
+p {
+  font-size: var(--fs-md);
+  font-family: "Sora", sans-serif;
+  font-weight: 200;
+}
+
+small {
+  font-size: var(--xs);
+}
+
+h1,
+h2,
+h3 {
   display: flex;
   align-items: center;
-  justify-content: start;
   gap: .2rem;
+
   color: var(--accent-emerald);
-  font: 200 "Share Tech", sans-serif;
+
+  font-family: var(--font-detail);
+
   letter-spacing: .1rem;
 }
 
-h1 { font-size: clamp(1.5rem, 3vh, 4rem); }
-h2 { font-size: clamp(1rem, 2vh, 3rem); }
-h3 { font-size: clamp(.8rem, 2vh, 2rem); }
-p { font-size: clamp(.2rem, 2vh, 1rem); }
-p,span {
-  font: 200 var(--accent-emerald)  clamp(.5rem, 2vh, 1.7rem) "Sora", sans-serif;
+p {
+  font-family: var(--font-text);
+  font-size: var(--fs-md);
+  font-weight: 300;
+  color: var(--text-primary);
+  line-height: 1.7;
 }
+
+span, small {
+  font-family: var(--font-text);
+  font-size: inherit;
+  color: inherit;
+}
+
 i{ color: var(--accent-emerald); }
 
 

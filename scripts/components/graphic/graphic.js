@@ -26,7 +26,7 @@ export class Graphic {
                   <li>
 
                      <small
-                        class="lang-item"
+                        class="lang-item share-tech-regular"
 
                         style="
                            --theme-color: ${lang.tech?.color || '#8B949E'};

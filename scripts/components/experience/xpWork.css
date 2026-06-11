@@ -1,12 +1,3 @@
-:root {
-  --bg-black-transparent: #0000004d;
-
-  --measure-sm: .5rem;
-  --measure-md: 1rem;
-  --measure-lg: 1.5rem;
-  --measure-xl: 2rem;
-}
-
 .xp-work,
 .xp-work ul:first-child {
   width: 100%;

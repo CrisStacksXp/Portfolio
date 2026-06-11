@@ -1,25 +1,14 @@
-:root {
-  --hero-info-text-primary: #f9f9f9;
-  --border-color: #314158;
-
-  --measure-sm: .5rem;
-  --measure-md: 1rem;
-  --measure-lg: 1.5rem;
-  --measure-xl: 2rem;
-}
-
 .hero {
   margin: 0 auto var(--measure-md);
-  padding: var(--measure-md);
+  padding: clamp(1rem, 2vw, 2rem);
   border: 1px solid var(--border-color);
   border-radius: .75rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: var(--measure-lg);
+  gap: clamp(1rem, 3vw, 3rem);
   overflow: hidden;
   position: relative;
-  color: var(--hero-info-text-primary);
 }
 
 .img {

@@ -131,13 +131,11 @@
                     "a": "https://github.com/CrisStacksXp/Rick_And_Morty_API",
                     "icon": "github.svg",
                     "name": "Go code"
-                },
-                {   
-                    "a": "https://www.figma.com/file/1n9sHj8Xo7l2mLh0qkKZtP/Rick-And-Morty-API?type=design&node-id=0-1&t=5u3vVh6n9b2e7i3-0",
+                },{
+                    "a": "#",
                     "icon": "figma.svg",
                     "name": "Go Figma"
-                }
-                ,
+                },
                 {
                     "a": "https://rickandmortyapiinfinitescroll.netlify.app/",
                     "icon": "netlify.svg",
@@ -173,7 +171,7 @@
             ],
             "links": [
                 {
-                    "a": "#",
+                    "a": "https://github.com/CrisStacksXp/To-do-list",
                     "icon": "github.svg",
                     "name": "Go code"
                 }
@@ -190,7 +188,7 @@
             "icon": "ph-light ph-github-logo"
         },
         {
-            "link": "mailto:cristianodd3097@gmail.com",
+            "link": "cristianodd3097@gmail.com",
             "icon": "ph-light ph-paper-plane-tilt"
         },
         {

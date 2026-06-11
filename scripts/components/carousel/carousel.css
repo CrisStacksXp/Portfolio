@@ -1,12 +1,3 @@
-:root {
-
-  --measure-sm: .5rem;
-  --measure-md: 1rem;
-  --measure-lg: 1.5rem;
-  --measure-xl: 2rem;
-
-}
-
 .simple-carousel {
   width: 2.5rem;
   overflow: hidden;
