@@ -1,11 +1,16 @@
-:root {
-  --graphic-text-default: #f9f9f9;
+/* =========================================
+   BAR LANGUAGE COMPONENT - GENERAL CONFIG
+========================================= */
 
-   --measure-sm: .5rem;
-   --measure-md: 1rem;
-   --measure-lg: 1.5rem;
-   --measure-xl: 2rem;
-
+.bar-item,
+.names-languages small,
+.lang-item {
+  will-change: transform, filter, box-shadow;
+  transition: 
+    transform .3s cubic-bezier(0.25, 1, 0.5, 1),
+    filter .3s ease,
+    box-shadow .3s ease,
+    opacity .3s ease;
 }
 
 /* =========================================
@@ -14,32 +19,23 @@
 
 .progress-bar-shell {
   width: 100%;
+  display: flex;
   flex-direction: column;
 }
 
 .names-languages,
 .names-languages li {
   display: flex;
-  place-content: center;
-  font-size: .90rem;
+  justify-content: center;
+  align-items: center;
+  font-size: .75rem;
 }
 
 .names-languages {
   flex-wrap: wrap;
   gap: var(--measure-sm);
-  font-size: var(--measure-md);
   margin-bottom: var(--measure-sm);
-  padding-block: .5rem;
-}
-
-.names-languages small {
-  padding: .2rem .4rem;
-  border-radius: var(--measure-md);
-
-  transition:
-    transform .3s ease,
-    filter .3s ease,
-    box-shadow .3s ease;
+  padding-block: var(--measure-sm);
 }
 
 .stack-bar {
@@ -51,73 +47,42 @@
   overflow: hidden;
 }
 
-.bar-item {
-  transition:
-    transform .3s ease,
-    filter .3s ease,
-    opacity .3s ease,
-    box-shadow .3s ease;
-}
-
 .lang-item {
   padding: .2rem var(--measure-sm);
   border-radius: var(--measure-md);
-  background:
+  background: 
     linear-gradient(135deg,
       rgb(var(--theme-rgb) / .85),
       rgb(var(--theme-rgb) / .45));
-
-  border:
-    1px solid rgb(var(--theme-rgb) / .4);
-
-  box-shadow:
-    0 0 var(--measure-sm) rgb(var(--theme-rgb) / .18);
-
-  transition:
-    transform .3s ease,
-    filter .3s ease,
-    box-shadow .3s ease;
+  border: 1px solid rgb(var(--theme-rgb) / .4);
+  box-shadow: 0 0 var(--measure-sm) rgb(var(--theme-rgb) / .18);
+  color: var(--graphic-text-default);
 }
 
 .lang-item:hover {
-  transform:
-    translateY(-2px);
-  filter:
-    brightness(1.1);
-  box-shadow:
-    0 0 var(--measure-sm) rgb(var(--theme-rgb) / .45);
+  transform: translateY(-2px);
+  filter: brightness(1.1);
+  box-shadow: 0 0 var(--measure-sm) rgb(var(--theme-rgb) / .45);
 }
 
 .bar-item {
   position: relative;
-  transition:
-    transform .3s ease,
-    filter .3s ease,
-    opacity .3s ease,
-    box-shadow .3s ease;
-
-  background:
+  width: 100%;
+  background: 
     linear-gradient(90deg,
-
       rgb(var(--theme-rgb) / .55),
-
       rgb(var(--theme-rgb)));
-
-  box-shadow:
-    0 0 var(--measure-sm) rgb(var(--theme-rgb) / .25);
+  box-shadow: 0 0 var(--measure-sm) rgb(var(--theme-rgb) / .25);
 }
 
 .bar-item:hover {
-  filter:
-    brightness(1.2);
-  transform:
-    scaleY(1.2);
-  box-shadow:
-    0 0 var(--measure-md) rgb(var(--theme-rgb) / .7);
+  filter: brightness(1.2);
+  transform: scaleY(1.2);
+  box-shadow: 0 0 var(--measure-md) rgb(var(--theme-rgb) / .7);
 }
 
 /* =========================================
-   BAR LANGUAGE COMPONENT -  htmlBar
+   BAR LANGUAGE COMPONENT - htmlBar()
 ========================================= */
 
 .bar-language {
@@ -129,10 +94,15 @@
   justify-content: center;
   gap: var(--measure-md);
   backdrop-filter: blur(var(--measure-md));
-  transition:
-    transform .4s ease,
-    box-shadow .4s ease;
   will-change: transform, opacity; 
+  background: 
+    linear-gradient(180deg,
+      rgb(var(--theme-rgb) / .10),
+      rgb(var(--theme-rgb) / .03));
+  border: 1px solid rgb(var(--theme-rgb) / .30);
+  box-shadow: 0 0 var(--measure-md) rgb(var(--theme-rgb) / .20);
+  color: rgb(var(--theme-rgb));
+  transition: transform .4s ease, box-shadow .4s ease;
 }
 
 .bar-language:hover {
@@ -145,20 +115,16 @@
   gap: .8rem;
 }
 
-.bar-language-header {
-  display: flex;
-  align-items: center;
-  gap: .8rem;
-}
-
 .bar-language-header img {
   width: 2.5rem;
   height: 2.5rem;
   object-fit: contain;
+  filter: drop-shadow(0 0 var(--measure-sm) rgb(var(--theme-rgb) / .60));
 }
 
 .bar-language small {
-  font-size: var(--measure-md);
+  font-size: var(--fs-xs);
+  color: rgb(var(--theme-rgb));
 }
 
 .bar-percentage {
@@ -174,14 +140,11 @@
   inset: 0;
   z-index: 10;
   pointer-events: none;
-  background:
+  background: 
     repeating-linear-gradient(90deg,
-
       transparent 0%,
       transparent calc(10% - 1px),
-
       rgb(var(--theme-rgb) / .25) calc(10% - 1px),
-
       rgb(var(--theme-rgb) / .25) 10%);
 }
 
@@ -192,98 +155,44 @@
   height: 100%;
   border-radius: inherit;
   transform-origin: left;
-  animation:
-    growBar 1.2s cubic-bezier(.77, 0, .18, 1) forwards;
+  background: 
+    linear-gradient(90deg,
+      rgb(var(--theme-rgb) / .40),
+      rgb(var(--theme-rgb)));
+  filter: drop-shadow(0 0 var(--measure-sm) rgb(var(--theme-rgb) / .60));
+  animation: growBar 1.2s cubic-bezier(.77, 0, .18, 1) forwards;
 }
 
 .bar-fill::after {
   content: '';
   position: absolute;
   inset: 0;
-  background:
+  background: 
     linear-gradient(90deg,
-
       transparent,
-
       rgb(255 255 255 / .25),
-
       transparent);
-  animation:
-    shine 3s linear infinite;
+  animation: shine 3s linear infinite;
 }
+
+/* =========================================
+   ANIMATIONS KEYFRAMES
+========================================= */
 
 @keyframes growBar {
   from {
-    transform:
-      scaleX(0);
+    transform: scaleX(0);
   }
   to {
-    transform:
-      scaleX(var(--percent));
+    transform: scaleX(var(--percent));
   }
 }
 
 @keyframes shine {
   from {
-    transform:
-      translateX(-100%);
+    transform: translateX(-100%);
   }
   to {
-    transform:
-      translateX(200%);
+    transform: translateX(200%);
   }
-}
-
-
-.bar-language {
-  background:
-    linear-gradient(180deg,
-      rgb(var(--theme-rgb) / .10),
-      rgb(var(--theme-rgb) / .03));
-
-  border:
-    1px solid rgb(var(--theme-rgb) / .30);
-  box-shadow:
-    0 0 var(--measure-md) rgb(var(--theme-rgb) / .20);
-  color:
-    rgb(var(--theme-rgb));
-}
-
-.bar-language {
-  background:
-    linear-gradient(180deg,
-      rgb(var(--theme-rgb) / .10),
-
-      rgb(var(--theme-rgb) / .03));
-  border:
-    1px solid rgb(var(--theme-rgb) / .30);
-  box-shadow:
-    0 0 var(--measure-md) rgb(var(--theme-rgb) / .20);
-  color:
-    rgb(var(--theme-rgb));
-}
-
-.bar-language-header img {
-  filter:
-    drop-shadow(0 0 var(--measure-sm) rgb(var(--theme-rgb) / .60));
-}
-
-.bar-language-header img {
-  filter:
-    drop-shadow(0 0 var(--measure-sm) rgb(var(--theme-rgb) / .60));
-}
-
-.bar-fill {
-  background:
-    linear-gradient(90deg,
-      rgb(var(--theme-rgb) / .40),
-      rgb(var(--theme-rgb)));
-
-  filter:
-    drop-shadow(0 0 var(--measure-sm) rgb(var(--theme-rgb) / .60));
-}
-
-.bar-language small {
-  color:
-    rgb(var(--theme-rgb));
 }

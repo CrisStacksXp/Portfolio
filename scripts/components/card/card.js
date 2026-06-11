@@ -12,14 +12,17 @@ export class CardProject {
       const {title, img, description, languages, framework, links } = this.data;
       const pathTech = '../../../images/icon-language/';
       const pathTools = '../../../images/icon-tools/';
-      console.info("links", links)
 
       const smallComponentClass = (framework && framework.length > 0)
          ? new Carousel([framework, pathTech]).init()
          : '';
 
-      const filterClassLinks = ["repository-link", "figma-link", "website-link"];
-      
+      const filterClassLinks = [
+         {name: "Go code", class: "repository-link"},
+         {name: "Go Figma", class: "figma-link"},
+         {name: "Go Website", class: "website-link"}
+      ]
+
       return /*HTML*/`
             <article class="card ${this.secondaryClass}">
             <div class="content-header">
@@ -34,18 +37,18 @@ export class CardProject {
                </div>
                      
                <section class="card-content">
-                  <p>${description}</p>
+                  <p class="${this.secondaryClass}">${description}</p>
 
-                  ${new Graphic(languages).initLanguagesBar() || ''}
+                  ${new Graphic(languages, this.secondaryClass ).initLanguagesBar() || ''}
 
                   
                   <div class="links ${this.secondaryClass}">
                      ${links
                         .filter(link => link?.a && link?.icon)
                         .map((link, index) => {
-                           
+                           const filterLink = filterClassLinks.find(f => f.name === link.name);
                            return `
-                              <a href="${link.a}" class="${filterClassLinks[index]}">
+                              <a href="${link.a}" class="${filterLink ? filterLink.class : ''}">
                                  <img src="${pathTools + link.icon}" alt="icon ${link.name || 'website'}">
                                  <small>${link.name}</small>
                               </a>
