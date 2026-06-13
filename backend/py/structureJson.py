@@ -2,7 +2,6 @@ class StructureJson:
 
     def __init__(self, github_data):
         self.github_data = github_data if github_data else {}
-        print("EstruturaJson inicializada com dados do GitHub:", github_data )  # Debug: Verificar os dados recebidos
 
     def build_json(self):
         portfolio = {
@@ -38,7 +37,7 @@ class StructureJson:
                     { "name": "Python", "percent": 36 },
                     { "name": "CSS", "percent": 73 },
                     { "name": "Angular", "percent": 38 },
-                    { "name": "Tailwind", "percent": 47 },
+                    { "name": "TailwindCSS", "percent": 47 },
                     { "name": "Django", "percent": 5},
                     { "name": "MySQL", "percent": 45 },
                     { "name": "PostgreSQL", "percent": 32 },
@@ -50,38 +49,7 @@ class StructureJson:
                     {"name": "Vscode", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg"},
                 ]
             },
-            "projects": [
-                {
-                    "img": "https://private-user-images.githubusercontent.com/177657704/531913619-e18e0af7-c98f-4bc2-9613-b9987d268064.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3ODA4NzMzNzMsIm5iZiI6MTc4MDg3MzA3MywicGF0aCI6Ii8xNzc2NTc3MDQvNTMxOTEzNjE5LWUxOGUwYWY3LWM5OGYtNGJjMi05NjEzLWI5OTg3ZDI2ODA2NC5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjYwNjA3JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI2MDYwN1QyMjU3NTNaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT05ODU5ZTAxYTkzN2RmMjUzMjI1YWY0YjZkZDdiNTFkZjQyNzMxM2YyODJkNGZiM2RhNDlmMmVjZDhiMTVlMTUyJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZyZXNwb25zZS1jb250ZW50LXR5cGU9aW1hZ2UlMkZwbmcifQ.dO7jbVFhpf52anjDiO0ywj-6-pt_F3w9vqUksglbowo",
-                    "title": "Rick And Morty API",
-                    "description": "Aplicação web com consumo de API REST, pesquisa de personagens em tempo real e scroll infinito, utilizando componentes modulares para exibição dinâmica dos dados.",
-                    "languages": [
-                        { "name": "TypeScript", "percent": 56.6 },
-                        { "name": "CSS", "percent": 38 },
-                        { "name": "HTML", "percent": 5.4 },
-                    ],
-                    "framework": [],
-                    "links": [
-                        {"a": "https://github.com/CrisStacksXp/Rick_And_Morty_API", "icon": "github.svg", "name": "Go code"},
-                        {"a": "https://rickandmortyapiinfinitescroll.netlify.app/", "icon": "netlify.svg", "name": "Go Website"}
-                    ]
-                },{
-                    "img": "../images/in-development.jpeg",
-                    "title": "To-do-list",
-                    "description": "Aplicação para gerenciamento de tarefas com autenticação, CRUD completo e integração com PostgreSQL, oferecendo uma experiência responsiva e intuitiva.",
-                    "languages": [
-                        { "name": "Python", "percent": 55.8 },
-                        { "name": "CSS", "percent": 23.9 },
-                        { "name": "HTML", "percent": 20.1 },
-                        { "name": "JavaScript", "percent": 0.2 },
-                    ],
-                    "framework": ["Django", "PostgreSQL"],
-                    "links": [
-                        {"a": "https://github.com/CrisStacksXp/To-do-list", "icon": "github.svg", "name": "Go code"}
-                    ]
-                },
-            ],
-            
+            "projects": [],
             
             "links": [
                 {"link": "https://www.linkedin.com/in/david-cristiano", "icon": "ph-light ph-linkedin-logo"},
