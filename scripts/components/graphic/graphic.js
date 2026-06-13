@@ -1,4 +1,4 @@
-import { getTechnology, getLangImage } from "../../util/getInfoLang.js";
+import { getTechnology } from "../../util/getInfoLang.js";
 
 export class Graphic {
 
@@ -86,7 +86,7 @@ export class Graphic {
          <div class="bar-language-header">
 
             <img 
-               src="${path + getLangImage(this.data.name)}"
+               src="${path + getTechnology(this.data.name)?.image}"
                alt="${this.data.name}"
             >
 

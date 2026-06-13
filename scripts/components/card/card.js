@@ -1,5 +1,4 @@
 import { Graphic } from "../graphic/graphic.js";
-import { getLangImage } from "../../util/getInfoLang.js";
 import { Carousel } from "../carousel/carousel.js";
 
 export class CardProject {
@@ -13,8 +12,14 @@ export class CardProject {
       const pathTech = '../../../images/icon-language/';
       const pathTools = '../../../images/icon-tools/';
 
-      const smallComponentClass = (framework && framework.length > 0)
-         ? new Carousel([framework, pathTech]).init()
+      const formattedFrameworks = framework?.map(item =>
+            item.trim().toLowerCase()
+         ) || [];
+
+         console.info('Formatted frameworks:', formattedFrameworks);
+
+      const smallComponentClass = (formattedFrameworks.length > 0)
+         ? new Carousel([formattedFrameworks, pathTech]).init()
          : '';
 
       const filterClassLinks = [

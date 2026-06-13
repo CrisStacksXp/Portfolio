@@ -106,7 +106,7 @@ export const technologies = [
    // 🎨 UI / Styling
 
    {
-      name: "Tailwind",
+      name: "TailwindCSS",
       color: "#06B6D4",
       rgb: "6 182 212",
       image: "tailwind.svg"
@@ -237,23 +237,31 @@ export const technologies = [
       color: "#02569B",
       rgb: "2 86 155",
       image: "flutter.svg"
-   },{
+   },
+   {
       name: "Pandas",
-      image: "pandas.svg"
+      image: "pandas.svg",
+      color: "#150458",
+      rgb: "21 4 88"
    }
 ];
 
 export const getTechnology = (name) => {
-   return technologies.find(tech => tech.name === name);
+   return technologies.find(tech => tech.name === name) || 
+   {
+      name: "Desconecido",
+      color: "#8B949E",
+      rgb: "139 148 158",
+      image: "default.svg"
+   };
 };
 
-export const getLangColor = (name) => {
+export const getTechnologyIgnoreCase = (name) => {
 
-   return getTechnology(name)?.color || "#8B949E";
-};
+   return technologies.find(
+      tech =>
+         tech.name.toLowerCase() ===
+         String(name).trim().toLowerCase()
+   );
 
-export const getLangImage = (name) => {
-
-   return getTechnology(name)?.image
-      || "../../../images/icon-language/default.svg";
 };
