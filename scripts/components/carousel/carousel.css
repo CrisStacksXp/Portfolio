@@ -20,7 +20,12 @@
 .simple-carousel img {
   width: var(--measure-xl);
   height: var(--measure-xl);
+  background: linear-gradient(180deg,
+      rgb(var(--theme-rgb) / .10),
+      rgb(var(--theme-rgb) / .03));
+  backdrop-filter: blur(var(--measure-md));
   object-fit: contain;
+  clip-path: polygon(0% 0%, 85% 0, 100% 15%, 100% 100%, 15% 100%, 0 85%);
   opacity: 0;
   transform:
     scale(.7)

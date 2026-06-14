@@ -1,4 +1,4 @@
-import { getTechnologyIgnoreCase } from "../../util/getInfoLang.js";
+import { getTechnologyIgnoreCase } from "../../util/filterTechs.js";
 
 export class Carousel {
 
@@ -23,7 +23,7 @@ export class Carousel {
 
                ${techsFormatted.map((el) => `
                   <img
-                     src="${basePath}${el.techs.image}"
+                     src="${basePath}${el.techs.icon}"
                      alt="Icon ${el.techs.name}"
                      style="
                         --theme-color: ${el.techs.color || '#8B949E'};
