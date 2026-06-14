@@ -174,7 +174,7 @@
   color: inherit !important; 
 }
 
-.website-link {
+.website-link-netlify{
   width: 2.5rem;
   aspect-ratio: 1;
   border: solid 2px #0da4a6;
@@ -182,7 +182,15 @@
   color: #0da4a6;
 }
 
-.website-link small {
+.website-link-vercel {
+  width: 2.5rem;
+  aspect-ratio: 1;
+  border: solid 2px #ffffff;
+  box-shadow: 0 0 var(--card-space-sm) #ffffff, inset 0 0 var(--card-space-sm) #ffffff;
+  color: #000;
+}
+
+:where(.website-link-netlify, .website-link-vercel) small {
   display: none;
 }
 
